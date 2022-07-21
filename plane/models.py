@@ -35,7 +35,7 @@ class MealType(models.Model)  :
     type_name = models.CharField(max_length=255, unique=True)
     meal = models.ManyToManyField(Meal)
     def __str__(self):
-        return self.name
+        return self.type_name
 
     class Meta:
         db_table = 'meal_type'
@@ -115,15 +115,6 @@ class Booking(models.Model):
         return str(self.id)
     
 
-class Ticket(models.Model):
-    status = models.CharField(max_length=255, unique=True)
-
-    class Meta:
-        db_table = 'ticket'
-
-    def __str__(self):
-        return str(self.id)
-
 class BookingDetail(models.Model):
     booking = models.ForeignKey(Booking, on_delete=models.CASCADE)
     pessanger = models.ForeignKey(Pessanger, on_delete=models.PROTECT)
@@ -131,7 +122,6 @@ class BookingDetail(models.Model):
     seat_type = models.ForeignKey(SeatType, on_delete=models.PROTECT)
     baggage_kg = models.IntegerField(default=0)
     amount = models.DecimalField(max_digits=10, decimal_places=2, null=True)
-    ticket = models.ForeignKey(Ticket, on_delete=models.CASCADE)
     age = models.ForeignKey(AgeGroup, on_delete=models.CASCADE)
 
     class Meta: 
@@ -140,6 +130,15 @@ class BookingDetail(models.Model):
     def __str__(self) :
         return f"{self.booking} - {self.pessanger}"
 
+class Ticket(models.Model):
+    status = models.CharField(max_length=255, unique=True)
+    booking_detail = models.ForeignKey(BookingDetail, on_delete=models.CASCADE)
+
+    class Meta:
+        db_table = 'ticket'
+
+    def __str__(self):
+        return str(self.id)
 
 class Departure(models.Model):
     origin = models.ForeignKey(City, on_delete=models.CASCADE, related_name='origin')
