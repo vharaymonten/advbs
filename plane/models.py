@@ -89,8 +89,8 @@ class Flight(models.Model):
     class Meta:
         db_table = 'flight'
     
-    # def __str__(self):
-    #     return self.flight_code + '-' + str(self.airline.airline_name)
+    def __str__(self):
+        return self.flight_code + '-' + str(self.airline.airline_name) + '-' + str(self.flight_type.name)
 
 class SeatType(models.Model):
     name = models.CharField(max_length=255)
