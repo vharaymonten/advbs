@@ -41,7 +41,7 @@ class MealType(models.Model)  :
         db_table = 'meal_type'
 
 class Airline(models.Model):
-    company_name = models.CharField(max_length=255, unique=True)
+    company_name = models.CharField(max_length=255)
     airline_name = models.CharField(max_length=255, unique=True)
     first_class_seat = models.PositiveIntegerField()
     business_seat = models.PositiveIntegerField()
