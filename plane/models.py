@@ -1,3 +1,5 @@
+from operator import mod
+from xmlrpc.client import TRANSPORT_ERROR
 from django.db import models
 
 # Create your models here.
@@ -43,6 +45,8 @@ class Airline(models.Model):
     business_seat = models.PositiveIntegerField()
     premium_seat = models.PositiveIntegerField()
     economy_seat = models.PositiveIntegerField()
+    has_max_pessanger = models.BooleanField(default=False)
+    
     def __str__(self):
         return self.company_name + "-" + self.airline_name
     class Meta:
@@ -52,6 +56,9 @@ class Pessanger(models.Model):
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
     dob = models.DateField()
+
+    class Meta:
+        db_table = 'pessanger'
 
     def __str__(self):
         return f"{self.first_name} - {self.last_name}"
@@ -105,13 +112,45 @@ class Booking(models.Model):
     def __str__(self):
         return str(self.id)
     
+
+class Ticket(models.Model):
+    status = models.CharField(max_length=255, unique=True)
+
+    class Meta:
+        db_table = 'ticket'
+
+    def __str__(self):
+        return str(self.id)
+
 class BookingDetail(models.Model):
     booking = models.ForeignKey(Booking, on_delete=models.CASCADE)
     pessanger = models.ForeignKey(Pessanger, on_delete=models.PROTECT)
     in_seat = models.BooleanField(default=True)
     seat_type = models.ForeignKey(SeatType, on_delete=models.PROTECT)
     baggage_kg = models.IntegerField(default=0)
+    amount = models.DecimalField(max_digits=10, decimal_places=2, null=True)
+    ticket = models.ForeignKey(Ticket, on_delete=models.CASCADE)
     
+    class Meta: 
+        db_table = 'booking_detail'
+
     def __str__(self) :
         return f"{self.booking} - {self.pessanger}"
+
+
+class Departure(models.Model):
+    origin = models.ForeignKey(City, on_delete=models.CASCADE, related_name='origin')
+    destination = models.ForeignKey(City, on_delete=models.CASCADE, related_name='destination')
+    date = models.DateField()
+    depart_time = models.TimeField()
+    arrive_time = models.TimeField()
+    flight = models.ForeignKey(Flight, on_delete=models.CASCADE)
+    meal = models.ForeignKey(Meal, on_delete=models.CASCADE)
+    flight_duration_m = models.IntegerField()
+
+    class Meta:
+        db_table = 'departure'
+
+    def __str__(self):
+        return f"{self.origin} - {self.destination}"
 
