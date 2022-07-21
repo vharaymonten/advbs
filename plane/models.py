@@ -1,0 +1,117 @@
+from django.db import models
+
+# Create your models here.
+class AgeGroup(models.Model):
+    name = models.CharField(max_length=10, unique=True)
+    def __str__(self):
+        return self.name
+    class Meta:
+        db_table = 'age_group'
+
+class City(models.Model):
+    code = models.CharField(primary_key=True, max_length=4, unique=True)
+    name = models.CharField(max_length=255, unique=True)
+
+    def __str__(self):
+        return self.code + " " + self.name 
+    class Meta:
+        db_table = "city"
+
+class Meal(models.Model)  :
+    name = models.CharField(max_length=255, unique=True)
+    is_vegan = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        db_table = 'meal'
+    
+class MealType(models.Model)  :
+    type_name = models.CharField(max_length=255, unique=True)
+    meal = models.ManyToManyField(Meal)
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        db_table = 'meal_type'
+
+class Airline(models.Model):
+    company_name = models.CharField(max_length=255, unique=True)
+    airline_name = models.CharField(max_length=255, unique=True)
+    first_class_seat = models.PositiveIntegerField()
+    business_seat = models.PositiveIntegerField()
+    premium_seat = models.PositiveIntegerField()
+    economy_seat = models.PositiveIntegerField()
+    def __str__(self):
+        return self.company_name + "-" + self.airline_name
+    class Meta:
+        db_table = 'airline'
+
+class Pessanger(models.Model):
+    first_name = models.CharField(max_length=255)
+    last_name = models.CharField(max_length=255)
+    dob = models.DateField()
+
+    def __str__(self):
+        return f"{self.first_name} - {self.last_name}"
+
+class Service(models.Model):
+    name = models.CharField(max_length=255)
+    airline = models.ManyToManyField(Airline)
+    class Meta:
+        db_table = 'service'
+
+    def __str__(self) :
+        return self.name
+
+class FlightType(models.Model):
+    name = models.CharField(max_length=255)
+    class Meta:
+        db_table = 'flight_type'
+    def __str__(self):
+        return self.name
+
+class Flight(models.Model):
+    flight_code = models.CharField(max_length=10)
+    flight_type = models.ForeignKey(FlightType, on_delete=models.CASCADE)
+    airline = models.ForeignKey(Airline, on_delete=models.CASCADE)
+    base_price = models.IntegerField()
+    class Meta:
+        db_table = 'flight'
+    
+    # def __str__(self):
+    #     return self.flight_code + '-' + str(self.airline.airline_name)
+
+class SeatType(models.Model):
+    name = models.CharField(max_length=255)
+    percentage = models.DecimalField(max_digits=4, decimal_places=2)
+
+    class Meta:
+        db_table = "seat_type"
+    
+    def __str__(self) :
+        return self.name
+
+class Booking(models.Model):
+    booking_date = models.DateField()
+    code = models.CharField(max_length=255, unique=True)
+    total_amount = models.DecimalField(max_digits=10, decimal_places=2)
+    paid = models.BooleanField(default=False)
+    flight = models.ForeignKey(Flight, on_delete=models.CASCADE)
+    class Meta:
+        db_table = 'booking'
+
+    def __str__(self):
+        return str(self.id)
+    
+class BookingDetail(models.Model):
+    booking = models.ForeignKey(Booking, on_delete=models.CASCADE)
+    pessanger = models.ForeignKey(Pessanger, on_delete=models.PROTECT)
+    in_seat = models.BooleanField(default=True)
+    seat_type = models.ForeignKey(SeatType, on_delete=models.PROTECT)
+    baggage_kg = models.IntegerField(default=0)
+    
+    def __str__(self) :
+        return f"{self.booking} - {self.pessanger}"
+
