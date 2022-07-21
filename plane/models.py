@@ -5,6 +5,8 @@ from django.db import models
 # Create your models here.
 class AgeGroup(models.Model):
     name = models.CharField(max_length=10, unique=True)
+    percentage = models.DecimalField(max_digits=4, decimal_places=2)
+
     def __str__(self):
         return self.name
     class Meta:
@@ -130,7 +132,8 @@ class BookingDetail(models.Model):
     baggage_kg = models.IntegerField(default=0)
     amount = models.DecimalField(max_digits=10, decimal_places=2, null=True)
     ticket = models.ForeignKey(Ticket, on_delete=models.CASCADE)
-    
+    age = models.ForeignKey(AgeGroup, on_delete=models.CASCADE)
+
     class Meta: 
         db_table = 'booking_detail'
 
