@@ -21,24 +21,6 @@ class City(models.Model):
     class Meta:
         db_table = "city"
 
-class Meal(models.Model)  :
-    name = models.CharField(max_length=255, unique=True)
-    is_vegan = models.BooleanField(default=False)
-
-    def __str__(self):
-        return self.name
-
-    class Meta:
-        db_table = 'meal'
-    
-class MealType(models.Model):
-    type_name = models.CharField(max_length=255, unique=True)
-    meal = models.ManyToManyField(Meal)
-    def __str__(self):
-        return self.type_name
-
-    class Meta:
-        db_table = 'meal_type'
 
 class Airline(models.Model):
     company_name = models.CharField(max_length=255)
@@ -54,6 +36,25 @@ class Airline(models.Model):
     class Meta:
         db_table = 'airline'
 
+class Meal(models.Model)  :
+    name = models.CharField(max_length=255, unique=True)
+    is_vegan = models.BooleanField(default=False)
+    airline  = models.ManyToManyField(Airline)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        db_table = 'meal'
+    
+class MealType(models.Model):
+    type_name = models.CharField(max_length=255, unique=True)
+    meal = models.ManyToManyField(Meal)
+    def __str__(self):
+        return self.type_name
+
+    class Meta:
+        db_table = 'meal_type'
 class Pessanger(models.Model):
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
