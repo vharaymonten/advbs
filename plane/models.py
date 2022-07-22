@@ -85,7 +85,8 @@ class Flight(models.Model):
     flight_code = models.CharField(max_length=10)
     flight_type = models.ForeignKey(FlightType, on_delete=models.CASCADE)
     airline = models.ForeignKey(Airline, on_delete=models.CASCADE)
-    base_price = models.IntegerField()
+    base_price = models.IntegerField(),
+    is_reserverable = models.BooleanField()
     class Meta:
         db_table = 'flight'
     
