@@ -103,12 +103,30 @@ class SeatType(models.Model):
     def __str__(self) :
         return self.name
 
+class Departure(models.Model):
+    origin = models.ForeignKey(City, on_delete=models.CASCADE, related_name='origin')
+    destination = models.ForeignKey(City, on_delete=models.CASCADE, related_name='destination')
+    date = models.DateField()
+    depart_time = models.TimeField()
+    arrive_time = models.TimeField()
+    flight = models.ForeignKey(Flight, on_delete=models.CASCADE)
+    meal = models.ForeignKey(Meal, on_delete=models.CASCADE)
+    flight_duration_m = models.IntegerField()
+
+    class Meta:
+        db_table = 'departure'
+
+    def __str__(self):
+        return f"{self.origin} - {self.destination}"
+
+
 class Booking(models.Model):
     booking_date = models.DateField()
-    code = models.CharField(max_length=255, unique=True)
+    code = models.CharField(max_length=255, unique=True, blank=False)
     total_amount = models.DecimalField(max_digits=10, decimal_places=2)
     paid = models.BooleanField(default=False)
     flight = models.ForeignKey(Flight, on_delete=models.CASCADE)
+    departure_id = models.ForeignKey(Departure, on_delete=models.CASCADE)
     class Meta:
         db_table = 'booking'
 
@@ -132,7 +150,7 @@ class BookingDetail(models.Model):
         return f"{self.booking} - {self.pessanger}"
 
 class Ticket(models.Model):
-    status = models.CharField(max_length=255, unique=True)
+    status = models.CharField(max_length=255) # RESERVED, CANCELLED, RESCHEADULED
     booking_detail = models.ForeignKey(BookingDetail, on_delete=models.CASCADE)
 
     class Meta:
@@ -141,19 +159,10 @@ class Ticket(models.Model):
     def __str__(self):
         return str(self.id)
 
-class Departure(models.Model):
-    origin = models.ForeignKey(City, on_delete=models.CASCADE, related_name='origin')
-    destination = models.ForeignKey(City, on_delete=models.CASCADE, related_name='destination')
-    date = models.DateField()
-    depart_time = models.TimeField()
-    arrive_time = models.TimeField()
-    flight = models.ForeignKey(Flight, on_delete=models.CASCADE)
-    meal = models.ForeignKey(Meal, on_delete=models.CASCADE)
-    flight_duration_m = models.IntegerField()
-
+class PessangerCredit(models.Model):
+    pessanger = models.ForeignKey(Pessanger, on_delete=models.CASCADE)
+    reason = models.CharField(max_length=255)
+    amount = models.DecimalField(decimal_places=2, max_digits=11)
+    expiry_date = models.DateField()
     class Meta:
-        db_table = 'departure'
-
-    def __str__(self):
-        return f"{self.origin} - {self.destination}"
-
+        db_table = 'pessanger_credit'
