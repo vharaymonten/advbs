@@ -31,11 +31,11 @@ class Meal(models.Model)  :
     class Meta:
         db_table = 'meal'
     
-class MealType(models.Model)  :
+class MealType(models.Model):
     type_name = models.CharField(max_length=255, unique=True)
     meal = models.ManyToManyField(Meal)
     def __str__(self):
-        return self.name
+        return self.type_name
 
     class Meta:
         db_table = 'meal_type'
@@ -131,7 +131,7 @@ class BookingDetail(models.Model):
     seat_type = models.ForeignKey(SeatType, on_delete=models.PROTECT)
     baggage_kg = models.IntegerField(default=0)
     amount = models.DecimalField(max_digits=10, decimal_places=2, null=True)
-    ticket = models.ForeignKey(Ticket, on_delete=models.CASCADE)
+    # ticket = models.ForeignKey(Ticket, on_delete=models.CASCADE)
     age = models.ForeignKey(AgeGroup, on_delete=models.CASCADE)
 
     class Meta: 
