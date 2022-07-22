@@ -122,7 +122,7 @@ class Departure(models.Model):
 
 class Booking(models.Model):
     booking_date = models.DateField()
-    code = models.CharField(max_length=255, unique=True, blank=False)
+    code = models.CharField(max_length=255, unique=False, blank=False, null=True)
     total_amount = models.DecimalField(max_digits=10, decimal_places=2)
     paid = models.BooleanField(default=False)
     departure = models.ForeignKey(Departure, on_delete=models.CASCADE)
