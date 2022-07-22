@@ -125,7 +125,6 @@ class Booking(models.Model):
     code = models.CharField(max_length=255, unique=True, blank=False)
     total_amount = models.DecimalField(max_digits=10, decimal_places=2)
     paid = models.BooleanField(default=False)
-    flight = models.ForeignKey(Flight, on_delete=models.CASCADE)
     departure_id = models.ForeignKey(Departure, on_delete=models.CASCADE)
     class Meta:
         db_table = 'booking'
