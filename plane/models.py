@@ -86,6 +86,7 @@ class Flight(models.Model):
     flight_type = models.ForeignKey(FlightType, on_delete=models.CASCADE)
     airline = models.ForeignKey(Airline, on_delete=models.CASCADE)
     base_price = models.IntegerField()
+    is_reserverable = models.BooleanField()
     class Meta:
         db_table = 'flight'
     
@@ -115,15 +116,6 @@ class Booking(models.Model):
         return str(self.id)
     
 
-class Ticket(models.Model):
-    status = models.CharField(max_length=255, unique=True)
-
-    class Meta:
-        db_table = 'ticket'
-
-    def __str__(self):
-        return str(self.id)
-
 class BookingDetail(models.Model):
     booking = models.ForeignKey(Booking, on_delete=models.CASCADE)
     pessanger = models.ForeignKey(Pessanger, on_delete=models.PROTECT)
@@ -131,7 +123,6 @@ class BookingDetail(models.Model):
     seat_type = models.ForeignKey(SeatType, on_delete=models.PROTECT)
     baggage_kg = models.IntegerField(default=0)
     amount = models.DecimalField(max_digits=10, decimal_places=2, null=True)
-    # ticket = models.ForeignKey(Ticket, on_delete=models.CASCADE)
     age = models.ForeignKey(AgeGroup, on_delete=models.CASCADE)
 
     class Meta: 
@@ -140,6 +131,15 @@ class BookingDetail(models.Model):
     def __str__(self) :
         return f"{self.booking} - {self.pessanger}"
 
+class Ticket(models.Model):
+    status = models.CharField(max_length=255, unique=True)
+    booking_detail = models.ForeignKey(BookingDetail, on_delete=models.CASCADE)
+
+    class Meta:
+        db_table = 'ticket'
+
+    def __str__(self):
+        return str(self.id)
 
 class Departure(models.Model):
     origin = models.ForeignKey(City, on_delete=models.CASCADE, related_name='origin')
