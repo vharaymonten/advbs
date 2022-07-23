@@ -83,9 +83,9 @@ DATABASES = {
 DATABASES = {
         'default': {
             'ENGINE': 'sql_server.pyodbc',
-            'HOST': 'advbs.database.windows.net',
+            'HOST': 'newadvbs.database.windows.net',
             'PORT': '',
-            'NAME': '2nd_advbs',
+            'NAME': 'backup_advbs',
             'USER': 'advbs-admin',
             'PASSWORD': 'Password1',
             'OPTIONS': {
