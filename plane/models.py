@@ -112,7 +112,7 @@ class Departure(models.Model):
     arrive_time = models.TimeField()
     flight = models.ForeignKey(Flight, on_delete=models.CASCADE)
     meal = models.ForeignKey(Meal, on_delete=models.CASCADE)
-    flight_duration_m = models.IntegerField()
+    flight_duration_m = models.IntegerField(null=True)
 
     class Meta:
         db_table = 'departure'

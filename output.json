@@ -1,0 +1,1185 @@
+[
+    {
+        "model": "auth.user",
+        "pk": 1,
+        "fields": {
+            "password": "pbkdf2_sha256$180000$CBPBmmYYjDUm$+edu8nsfe7+E5J3tmNbq7h4/aSN8FhOtgrPWA8G3tN0=",
+            "last_login": "2022-07-23T08:19:34.903Z",
+            "is_superuser": true,
+            "username": "ccy",
+            "first_name": "",
+            "last_name": "",
+            "email": "ccy@gmail.com",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2022-07-23T08:19:21.890Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "o2mid5qdkxoxe8dql6yjl18cdsjkxgye",
+        "fields": {
+            "session_data": "MjhmZTQ2Zjg4MGI0NWE2Mjk0OWQzYzk4YjIzMzIxNDIwNzRhNzA0OTp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJhNGRiOWQ0ZDQ3MDdkMTg3NTAxMjU1ZWNjNjM2NGRjMzAwYjUwNmI1In0=",
+            "expire_date": "2022-08-06T08:19:35.090Z"
+        }
+    },
+    {
+        "model": "plane.agegroup",
+        "pk": 1,
+        "fields": {
+            "name": "INFANT",
+            "percentage": "0.00"
+        }
+    },
+    {
+        "model": "plane.agegroup",
+        "pk": 2,
+        "fields": {
+            "name": "CHILD",
+            "percentage": "5.00"
+        }
+    },
+    {
+        "model": "plane.agegroup",
+        "pk": 3,
+        "fields": {
+            "name": "YOUTH",
+            "percentage": "7.00"
+        }
+    },
+    {
+        "model": "plane.agegroup",
+        "pk": 4,
+        "fields": {
+            "name": "ADULT",
+            "percentage": "10.00"
+        }
+    },
+    {
+        "model": "plane.agegroup",
+        "pk": 5,
+        "fields": {
+            "name": "SENIOR",
+            "percentage": "2.00"
+        }
+    },
+    {
+        "model": "plane.city",
+        "pk": "JH",
+        "fields": {
+            "name": "Johor"
+        }
+    },
+    {
+        "model": "plane.city",
+        "pk": "JKT",
+        "fields": {
+            "name": "Jakarta"
+        }
+    },
+    {
+        "model": "plane.city",
+        "pk": "KL",
+        "fields": {
+            "name": "Kuala Lumpur"
+        }
+    },
+    {
+        "model": "plane.city",
+        "pk": "KTN",
+        "fields": {
+            "name": "Kelantan"
+        }
+    },
+    {
+        "model": "plane.city",
+        "pk": "SG",
+        "fields": {
+            "name": "Singapore"
+        }
+    },
+    {
+        "model": "plane.city",
+        "pk": "SRK",
+        "fields": {
+            "name": "Serawah"
+        }
+    },
+    {
+        "model": "plane.airline",
+        "pk": 1,
+        "fields": {
+            "company_name": "Air Asia Group",
+            "airline_name": "Air Asia",
+            "first_class_seat": 0,
+            "business_seat": 0,
+            "premium_seat": 12,
+            "economy_seat": 180,
+            "has_max_pessanger": false
+        }
+    },
+    {
+        "model": "plane.airline",
+        "pk": 2,
+        "fields": {
+            "company_name": "Air Asia Group",
+            "airline_name": "Air Asia X",
+            "first_class_seat": 0,
+            "business_seat": 12,
+            "premium_seat": 0,
+            "economy_seat": 365,
+            "has_max_pessanger": false
+        }
+    },
+    {
+        "model": "plane.airline",
+        "pk": 3,
+        "fields": {
+            "company_name": "Malaysia Airline Berhad",
+            "airline_name": "Malaysia Airline",
+            "first_class_seat": 4,
+            "business_seat": 35,
+            "premium_seat": 0,
+            "economy_seat": 247,
+            "has_max_pessanger": true
+        }
+    },
+    {
+        "model": "plane.airline",
+        "pk": 4,
+        "fields": {
+            "company_name": "Malaysia Airline Berhad",
+            "airline_name": "Firefly",
+            "first_class_seat": 0,
+            "business_seat": 0,
+            "premium_seat": 20,
+            "economy_seat": 72,
+            "has_max_pessanger": true
+        }
+    },
+    {
+        "model": "plane.airline",
+        "pk": 5,
+        "fields": {
+            "company_name": "Lion Air Group",
+            "airline_name": "Batik Air",
+            "first_class_seat": 0,
+            "business_seat": 12,
+            "premium_seat": 0,
+            "economy_seat": 144,
+            "has_max_pessanger": false
+        }
+    },
+    {
+        "model": "plane.airline",
+        "pk": 6,
+        "fields": {
+            "company_name": "MASwings Sdn Bhd",
+            "airline_name": "MASwings Airline",
+            "first_class_seat": 0,
+            "business_seat": 0,
+            "premium_seat": 0,
+            "economy_seat": 68,
+            "has_max_pessanger": true
+        }
+    },
+    {
+        "model": "plane.airline",
+        "pk": 7,
+        "fields": {
+            "company_name": "SKS Airways",
+            "airline_name": "SKS Airways Airlines",
+            "first_class_seat": 0,
+            "business_seat": 0,
+            "premium_seat": 0,
+            "economy_seat": 60,
+            "has_max_pessanger": false
+        }
+    },
+    {
+        "model": "plane.meal",
+        "pk": 1,
+        "fields": {
+            "name": "nasi lemak",
+            "is_vegan": true,
+            "airline": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+            ]
+        }
+    },
+    {
+        "model": "plane.meal",
+        "pk": 2,
+        "fields": {
+            "name": "aglio olio spaghetti",
+            "is_vegan": true,
+            "airline": [
+                1,
+                2
+            ]
+        }
+    },
+    {
+        "model": "plane.meal",
+        "pk": 3,
+        "fields": {
+            "name": "chicken chop",
+            "is_vegan": false,
+            "airline": [
+                1,
+                2
+            ]
+        }
+    },
+    {
+        "model": "plane.meal",
+        "pk": 4,
+        "fields": {
+            "name": "milo",
+            "is_vegan": true,
+            "airline": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+            ]
+        }
+    },
+    {
+        "model": "plane.meal",
+        "pk": 5,
+        "fields": {
+            "name": "100 plus",
+            "is_vegan": true,
+            "airline": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+            ]
+        }
+    },
+    {
+        "model": "plane.meal",
+        "pk": 6,
+        "fields": {
+            "name": "orange juice",
+            "is_vegan": true,
+            "airline": [
+                3,
+                4
+            ]
+        }
+    },
+    {
+        "model": "plane.meal",
+        "pk": 7,
+        "fields": {
+            "name": "fried rice",
+            "is_vegan": true,
+            "airline": [
+                1,
+                2,
+                5,
+                6,
+                7
+            ]
+        }
+    },
+    {
+        "model": "plane.mealtype",
+        "pk": 1,
+        "fields": {
+            "type_name": "MULTI MEAL",
+            "meal": [
+                1,
+                2,
+                4,
+                5
+            ]
+        }
+    },
+    {
+        "model": "plane.mealtype",
+        "pk": 2,
+        "fields": {
+            "type_name": "SINGLE MEAL",
+            "meal": [
+                6,
+                7
+            ]
+        }
+    },
+    {
+        "model": "plane.mealtype",
+        "pk": 3,
+        "fields": {
+            "type_name": "SERVING REFRESHMENT",
+            "meal": [
+                4,
+                5,
+                6,
+                7
+            ]
+        }
+    },
+    {
+        "model": "plane.pessanger",
+        "pk": 1,
+        "fields": {
+            "first_name": "Micheal",
+            "last_name": "Lee",
+            "dob": "1999-05-10"
+        }
+    },
+    {
+        "model": "plane.pessanger",
+        "pk": 2,
+        "fields": {
+            "first_name": "Miche",
+            "last_name": "Lee",
+            "dob": "1997-05-10"
+        }
+    },
+    {
+        "model": "plane.pessanger",
+        "pk": 3,
+        "fields": {
+            "first_name": "Henry",
+            "last_name": "Law",
+            "dob": "1955-07-05"
+        }
+    },
+    {
+        "model": "plane.pessanger",
+        "pk": 4,
+        "fields": {
+            "first_name": "John",
+            "last_name": "Chou",
+            "dob": "1998-02-04"
+        }
+    },
+    {
+        "model": "plane.pessanger",
+        "pk": 5,
+        "fields": {
+            "first_name": "Raymond",
+            "last_name": "Law",
+            "dob": "1955-07-05"
+        }
+    },
+    {
+        "model": "plane.pessanger",
+        "pk": 6,
+        "fields": {
+            "first_name": "Michelle",
+            "last_name": "Leong",
+            "dob": "1987-02-04"
+        }
+    },
+    {
+        "model": "plane.pessanger",
+        "pk": 7,
+        "fields": {
+            "first_name": "Vivian",
+            "last_name": "Law",
+            "dob": "2012-08-08"
+        }
+    },
+    {
+        "model": "plane.pessanger",
+        "pk": 8,
+        "fields": {
+            "first_name": "Eunice",
+            "last_name": "Law",
+            "dob": "2022-04-02"
+        }
+    },
+    {
+        "model": "plane.pessanger",
+        "pk": 9,
+        "fields": {
+            "first_name": "Janice",
+            "last_name": "Law",
+            "dob": "2009-08-05"
+        }
+    },
+    {
+        "model": "plane.service",
+        "pk": 1,
+        "fields": {
+            "name": "WHEELCHAIR",
+            "airline": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+            ]
+        }
+    },
+    {
+        "model": "plane.service",
+        "pk": 2,
+        "fields": {
+            "name": "UNACCOMPANIED",
+            "airline": [
+                1,
+                4,
+                6
+            ]
+        }
+    },
+    {
+        "model": "plane.flighttype",
+        "pk": 1,
+        "fields": {
+            "name": "ONE WAY"
+        }
+    },
+    {
+        "model": "plane.flighttype",
+        "pk": 2,
+        "fields": {
+            "name": "ROUND TRIP"
+        }
+    },
+    {
+        "model": "plane.flighttype",
+        "pk": 3,
+        "fields": {
+            "name": "MULTI CITY"
+        }
+    },
+    {
+        "model": "plane.flight",
+        "pk": 1,
+        "fields": {
+            "flight_code": "AS001",
+            "flight_type": 3,
+            "airline": 1,
+            "base_price": 78,
+            "is_reserverable": true
+        }
+    },
+    {
+        "model": "plane.flight",
+        "pk": 2,
+        "fields": {
+            "flight_code": "AS002",
+            "flight_type": 2,
+            "airline": 1,
+            "base_price": 54,
+            "is_reserverable": true
+        }
+    },
+    {
+        "model": "plane.flight",
+        "pk": 3,
+        "fields": {
+            "flight_code": "AS003",
+            "flight_type": 1,
+            "airline": 1,
+            "base_price": 34,
+            "is_reserverable": true
+        }
+    },
+    {
+        "model": "plane.flight",
+        "pk": 4,
+        "fields": {
+            "flight_code": "AS004",
+            "flight_type": 1,
+            "airline": 1,
+            "base_price": 34,
+            "is_reserverable": true
+        }
+    },
+    {
+        "model": "plane.flight",
+        "pk": 5,
+        "fields": {
+            "flight_code": "AS005",
+            "flight_type": 1,
+            "airline": 1,
+            "base_price": 34,
+            "is_reserverable": true
+        }
+    },
+    {
+        "model": "plane.flight",
+        "pk": 6,
+        "fields": {
+            "flight_code": "AS006",
+            "flight_type": 2,
+            "airline": 1,
+            "base_price": 54,
+            "is_reserverable": true
+        }
+    },
+    {
+        "model": "plane.flight",
+        "pk": 7,
+        "fields": {
+            "flight_code": "AX001",
+            "flight_type": 3,
+            "airline": 2,
+            "base_price": 60,
+            "is_reserverable": false
+        }
+    },
+    {
+        "model": "plane.flight",
+        "pk": 8,
+        "fields": {
+            "flight_code": "AX002",
+            "flight_type": 1,
+            "airline": 2,
+            "base_price": 30,
+            "is_reserverable": false
+        }
+    },
+    {
+        "model": "plane.flight",
+        "pk": 9,
+        "fields": {
+            "flight_code": "AX003",
+            "flight_type": 2,
+            "airline": 2,
+            "base_price": 45,
+            "is_reserverable": false
+        }
+    },
+    {
+        "model": "plane.flight",
+        "pk": 10,
+        "fields": {
+            "flight_code": "AX004",
+            "flight_type": 2,
+            "airline": 2,
+            "base_price": 45,
+            "is_reserverable": false
+        }
+    },
+    {
+        "model": "plane.flight",
+        "pk": 11,
+        "fields": {
+            "flight_code": "MA001",
+            "flight_type": 2,
+            "airline": 3,
+            "base_price": 50,
+            "is_reserverable": true
+        }
+    },
+    {
+        "model": "plane.flight",
+        "pk": 12,
+        "fields": {
+            "flight_code": "MA002",
+            "flight_type": 3,
+            "airline": 3,
+            "base_price": 80,
+            "is_reserverable": true
+        }
+    },
+    {
+        "model": "plane.flight",
+        "pk": 13,
+        "fields": {
+            "flight_code": "MA003",
+            "flight_type": 1,
+            "airline": 3,
+            "base_price": 40,
+            "is_reserverable": true
+        }
+    },
+    {
+        "model": "plane.flight",
+        "pk": 14,
+        "fields": {
+            "flight_code": "MA004",
+            "flight_type": 2,
+            "airline": 3,
+            "base_price": 50,
+            "is_reserverable": true
+        }
+    },
+    {
+        "model": "plane.flight",
+        "pk": 15,
+        "fields": {
+            "flight_code": "MA005",
+            "flight_type": 1,
+            "airline": 3,
+            "base_price": 40,
+            "is_reserverable": true
+        }
+    },
+    {
+        "model": "plane.flight",
+        "pk": 16,
+        "fields": {
+            "flight_code": "FF001",
+            "flight_type": 1,
+            "airline": 4,
+            "base_price": 50,
+            "is_reserverable": true
+        }
+    },
+    {
+        "model": "plane.flight",
+        "pk": 17,
+        "fields": {
+            "flight_code": "FF002",
+            "flight_type": 2,
+            "airline": 4,
+            "base_price": 70,
+            "is_reserverable": true
+        }
+    },
+    {
+        "model": "plane.flight",
+        "pk": 18,
+        "fields": {
+            "flight_code": "FF003",
+            "flight_type": 2,
+            "airline": 4,
+            "base_price": 70,
+            "is_reserverable": true
+        }
+    },
+    {
+        "model": "plane.flight",
+        "pk": 19,
+        "fields": {
+            "flight_code": "FF004",
+            "flight_type": 1,
+            "airline": 4,
+            "base_price": 50,
+            "is_reserverable": true
+        }
+    },
+    {
+        "model": "plane.flight",
+        "pk": 20,
+        "fields": {
+            "flight_code": "BA001",
+            "flight_type": 3,
+            "airline": 5,
+            "base_price": 55,
+            "is_reserverable": false
+        }
+    },
+    {
+        "model": "plane.flight",
+        "pk": 21,
+        "fields": {
+            "flight_code": "BA002",
+            "flight_type": 2,
+            "airline": 5,
+            "base_price": 30,
+            "is_reserverable": false
+        }
+    },
+    {
+        "model": "plane.flight",
+        "pk": 22,
+        "fields": {
+            "flight_code": "BA003",
+            "flight_type": 1,
+            "airline": 5,
+            "base_price": 20,
+            "is_reserverable": false
+        }
+    },
+    {
+        "model": "plane.flight",
+        "pk": 23,
+        "fields": {
+            "flight_code": "MAA001",
+            "flight_type": 1,
+            "airline": 6,
+            "base_price": 15,
+            "is_reserverable": false
+        }
+    },
+    {
+        "model": "plane.flight",
+        "pk": 24,
+        "fields": {
+            "flight_code": "MAA002",
+            "flight_type": 2,
+            "airline": 6,
+            "base_price": 25,
+            "is_reserverable": false
+        }
+    },
+    {
+        "model": "plane.flight",
+        "pk": 25,
+        "fields": {
+            "flight_code": "MAA003",
+            "flight_type": 1,
+            "airline": 6,
+            "base_price": 15,
+            "is_reserverable": false
+        }
+    },
+    {
+        "model": "plane.flight",
+        "pk": 26,
+        "fields": {
+            "flight_code": "SKA001",
+            "flight_type": 2,
+            "airline": 7,
+            "base_price": 19,
+            "is_reserverable": false
+        }
+    },
+    {
+        "model": "plane.flight",
+        "pk": 27,
+        "fields": {
+            "flight_code": "SKA002",
+            "flight_type": 3,
+            "airline": 7,
+            "base_price": 29,
+            "is_reserverable": false
+        }
+    },
+    {
+        "model": "plane.seattype",
+        "pk": 1,
+        "fields": {
+            "name": "FIRST CLASS",
+            "percentage": "20.00"
+        }
+    },
+    {
+        "model": "plane.seattype",
+        "pk": 2,
+        "fields": {
+            "name": "ECONOMY CLASS",
+            "percentage": "5.00"
+        }
+    },
+    {
+        "model": "plane.seattype",
+        "pk": 3,
+        "fields": {
+            "name": "PREMIUM ECONOMY CLASS",
+            "percentage": "10.00"
+        }
+    },
+    {
+        "model": "plane.seattype",
+        "pk": 4,
+        "fields": {
+            "name": "BUSINESS CLASS",
+            "percentage": "15.00"
+        }
+    },
+    {
+        "model": "plane.departure",
+        "pk": 42,
+        "fields": {
+            "origin": "KL",
+            "destination": "KTN",
+            "date": "2022-07-24",
+            "depart_time": "07:30:00",
+            "arrive_time": "08:30:00",
+            "flight": 1,
+            "meal": 1,
+            "flight_duration_m": 60
+        }
+    },
+    {
+        "model": "plane.departure",
+        "pk": 43,
+        "fields": {
+            "origin": "KL",
+            "destination": "KTN",
+            "date": "2022-07-24",
+            "depart_time": "07:30:00",
+            "arrive_time": "16:30:00",
+            "flight": 7,
+            "meal": 2,
+            "flight_duration_m": 540
+        }
+    },
+    {
+        "model": "plane.departure",
+        "pk": 44,
+        "fields": {
+            "origin": "JKT",
+            "destination": "KTN",
+            "date": "2022-07-19",
+            "depart_time": "07:30:00",
+            "arrive_time": "16:30:00",
+            "flight": 13,
+            "meal": 2,
+            "flight_duration_m": 540
+        }
+    },
+    {
+        "model": "plane.departure",
+        "pk": 45,
+        "fields": {
+            "origin": "JKT",
+            "destination": "SRK",
+            "date": "2022-07-22",
+            "depart_time": "10:00:00",
+            "arrive_time": "10:45:00",
+            "flight": 4,
+            "meal": 1,
+            "flight_duration_m": 45
+        }
+    },
+    {
+        "model": "plane.departure",
+        "pk": 46,
+        "fields": {
+            "origin": "SRK",
+            "destination": "JKT",
+            "date": "2022-07-22",
+            "depart_time": "10:00:00",
+            "arrive_time": "12:00:00",
+            "flight": 20,
+            "meal": 3,
+            "flight_duration_m": 120
+        }
+    },
+    {
+        "model": "plane.departure",
+        "pk": 47,
+        "fields": {
+            "origin": "KL",
+            "destination": "SG",
+            "date": "2022-07-24",
+            "depart_time": "05:00:00",
+            "arrive_time": "07:00:00",
+            "flight": 18,
+            "meal": 1,
+            "flight_duration_m": 120
+        }
+    },
+    {
+        "model": "plane.departure",
+        "pk": 48,
+        "fields": {
+            "origin": "SG",
+            "destination": "KL",
+            "date": "2022-07-24",
+            "depart_time": "05:00:00",
+            "arrive_time": "07:00:00",
+            "flight": 11,
+            "meal": 1,
+            "flight_duration_m": 120
+        }
+    },
+    {
+        "model": "plane.departure",
+        "pk": 49,
+        "fields": {
+            "origin": "JH",
+            "destination": "KL",
+            "date": "2022-07-24",
+            "depart_time": "05:00:00",
+            "arrive_time": "12:00:00",
+            "flight": 21,
+            "meal": 2,
+            "flight_duration_m": 420
+        }
+    },
+    {
+        "model": "plane.departure",
+        "pk": 50,
+        "fields": {
+            "origin": "JH",
+            "destination": "SG",
+            "date": "2022-07-24",
+            "depart_time": "05:00:00",
+            "arrive_time": "12:00:00",
+            "flight": 5,
+            "meal": 2,
+            "flight_duration_m": 420
+        }
+    },
+    {
+        "model": "plane.departure",
+        "pk": 51,
+        "fields": {
+            "origin": "SG",
+            "destination": "KTN",
+            "date": "2022-07-24",
+            "depart_time": "05:00:00",
+            "arrive_time": "12:00:00",
+            "flight": 16,
+            "meal": 2,
+            "flight_duration_m": 420
+        }
+    },
+    {
+        "model": "plane.departure",
+        "pk": 52,
+        "fields": {
+            "origin": "SRK",
+            "destination": "KL",
+            "date": "2022-07-24",
+            "depart_time": "13:00:00",
+            "arrive_time": "14:00:00",
+            "flight": 23,
+            "meal": 3,
+            "flight_duration_m": 60
+        }
+    },
+    {
+        "model": "plane.departure",
+        "pk": 53,
+        "fields": {
+            "origin": "SRK",
+            "destination": "KL",
+            "date": "2022-07-24",
+            "depart_time": "13:00:00",
+            "arrive_time": "14:00:00",
+            "flight": 26,
+            "meal": 1,
+            "flight_duration_m": 60
+        }
+    },
+    {
+        "model": "plane.departure",
+        "pk": 54,
+        "fields": {
+            "origin": "KL",
+            "destination": "JH",
+            "date": "2022-07-30",
+            "depart_time": "04:00:00",
+            "arrive_time": "16:00:00",
+            "flight": 14,
+            "meal": 2,
+            "flight_duration_m": 720
+        }
+    },
+    {
+        "model": "plane.departure",
+        "pk": 55,
+        "fields": {
+            "origin": "SG",
+            "destination": "JH",
+            "date": "2022-07-30",
+            "depart_time": "10:00:00",
+            "arrive_time": "16:00:00",
+            "flight": 12,
+            "meal": 1,
+            "flight_duration_m": 360
+        }
+    },
+    {
+        "model": "plane.departure",
+        "pk": 56,
+        "fields": {
+            "origin": "JH",
+            "destination": "JKT",
+            "date": "2022-07-30",
+            "depart_time": "11:00:00",
+            "arrive_time": "17:00:00",
+            "flight": 6,
+            "meal": 1,
+            "flight_duration_m": 360
+        }
+    },
+    {
+        "model": "plane.booking",
+        "pk": 1,
+        "fields": {
+            "booking_date": "2022-07-21",
+            "code": "B001",
+            "total_amount": "100.00",
+            "paid": true,
+            "departure": 42
+        }
+    },
+    {
+        "model": "plane.booking",
+        "pk": 2,
+        "fields": {
+            "booking_date": "2022-06-20",
+            "code": "B002",
+            "total_amount": "59.00",
+            "paid": false,
+            "departure": 46
+        }
+    },
+    {
+        "model": "plane.booking",
+        "pk": 3,
+        "fields": {
+            "booking_date": "2022-07-23",
+            "code": "B003",
+            "total_amount": "150.00",
+            "paid": true,
+            "departure": 51
+        }
+    },
+    {
+        "model": "plane.bookingdetail",
+        "pk": 7,
+        "fields": {
+            "booking": 1,
+            "pessanger": 1,
+            "in_seat": true,
+            "seat_type": 2,
+            "baggage_kg": 1,
+            "amount": "50.00",
+            "age": 4
+        }
+    },
+    {
+        "model": "plane.bookingdetail",
+        "pk": 8,
+        "fields": {
+            "booking": 1,
+            "pessanger": 8,
+            "in_seat": false,
+            "seat_type": 2,
+            "baggage_kg": 0,
+            "amount": "15.00",
+            "age": 1
+        }
+    },
+    {
+        "model": "plane.bookingdetail",
+        "pk": 9,
+        "fields": {
+            "booking": 1,
+            "pessanger": 2,
+            "in_seat": true,
+            "seat_type": 2,
+            "baggage_kg": 2,
+            "amount": "50.00",
+            "age": 4
+        }
+    },
+    {
+        "model": "plane.bookingdetail",
+        "pk": 10,
+        "fields": {
+            "booking": 1,
+            "pessanger": 3,
+            "in_seat": true,
+            "seat_type": 3,
+            "baggage_kg": 2,
+            "amount": "10.00",
+            "age": 5
+        }
+    },
+    {
+        "model": "plane.bookingdetail",
+        "pk": 11,
+        "fields": {
+            "booking": 2,
+            "pessanger": 7,
+            "in_seat": true,
+            "seat_type": 3,
+            "baggage_kg": 20,
+            "amount": "14.00",
+            "age": 3
+        }
+    },
+    {
+        "model": "plane.bookingdetail",
+        "pk": 12,
+        "fields": {
+            "booking": 2,
+            "pessanger": 5,
+            "in_seat": true,
+            "seat_type": 3,
+            "baggage_kg": 5,
+            "amount": "10.00",
+            "age": 5
+        }
+    },
+    {
+        "model": "plane.bookingdetail",
+        "pk": 13,
+        "fields": {
+            "booking": 3,
+            "pessanger": 4,
+            "in_seat": true,
+            "seat_type": 4,
+            "baggage_kg": 12,
+            "amount": "70.00",
+            "age": 4
+        }
+    },
+    {
+        "model": "plane.bookingdetail",
+        "pk": 14,
+        "fields": {
+            "booking": 3,
+            "pessanger": 6,
+            "in_seat": true,
+            "seat_type": 4,
+            "baggage_kg": 12,
+            "amount": "70.00",
+            "age": 4
+        }
+    },
+    {
+        "model": "plane.bookingdetail",
+        "pk": 15,
+        "fields": {
+            "booking": 3,
+            "pessanger": 9,
+            "in_seat": true,
+            "seat_type": 3,
+            "baggage_kg": 5,
+            "amount": "15.00",
+            "age": 2
+        }
+    },
+    {
+        "model": "plane.ticket",
+        "pk": 1,
+        "fields": {
+            "status": "RESERVED",
+            "booking_detail": 7
+        }
+    },
+    {
+        "model": "plane.ticket",
+        "pk": 2,
+        "fields": {
+            "status": "CANCELLED",
+            "booking_detail": 10
+        }
+    },
+    {
+        "model": "plane.pessangercredit",
+        "pk": 1,
+        "fields": {
+            "pessanger": 3,
+            "reason": "Cancel",
+            "amount": "100.00",
+            "expiry_date": "2023-01-01"
+        }
+    }
+]
